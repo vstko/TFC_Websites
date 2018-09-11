@@ -1,0 +1,24 @@
+{
+  "name": "tfc_web_teaser",
+  "version": "1.0.0",
+  "description": "T F Chen Website Teaser",
+  "main": "app.js",
+  "scripts": {
+  	"css": "node-sass --output-style compressed --include-path scss scss/main.scss style.css",
+	"js": "uglifyjs js/*.js --compress --mangle > app.js",
+	"watchCss": "nodemon -e scss -x \"npm run css\"",
+	"watchJs": "nodemon --watch js/*.js -e js -x \"npm run js\"",
+	"watch":"npm run watchCss & npm run watchJs",
+	"start": "npm run watch"
+  },
+  "keywords": [
+    "TFCTeaser"
+  ],
+  "author": "EKFM & RL",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
+    "uglify-js": "^3.4.9"
+  }
+}
